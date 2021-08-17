@@ -13,6 +13,8 @@
 
 |MsgCode(Upper) 2byte|MsgCode(Lower) 2byte|
 |--------------------|--------------------|
+|2 Byte|2 Byte|
+|ex) 0x00010002|
 
 |MsgCode|Description|
 |-------|-----------|
