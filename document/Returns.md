@@ -12,6 +12,7 @@
 # API 서버 Message Code 값 정의
 
 |MsgCode(Upper) 2byte|MsgCode(Lower) 2byte|
+|--------------------|--------------------|
 
 |MsgCode|Description|
 |-------|-----------|
