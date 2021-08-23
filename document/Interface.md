@@ -119,3 +119,44 @@ Params :
             'Message':'Upload Succeed'
         }]
     }
+
+## 단말기 생존 여부 파악
+Address:
+
+    POST /82D5984C2A2AD4C62CAF1DD073B1C91C
+
+Params :
+
+    {
+        'Serial':'BB21A001'
+        'Data':[{
+            'status_Xdemon':[{
+                'AcDSys':{
+                    'KeepAlive':True,
+                    'Uptime':'2016-10-27T17:13:40Z'
+                },
+                'HiUSys':{
+                    'KeepAlive':True,
+                    'Uptime':'2016-10-27T17:13:40Z'
+                },
+                'ReXec':{
+                    'KeepAlive':True,
+                    'Uptime':'2016-10-27T17:13:40Z'
+                },
+                'AlUSys':{
+                    'KeepAlive':True,
+                    'Uptime':'2016-10-27T17:13:40Z'
+                }
+            }]
+        }]
+    }
+
+### 응답
+    #### 정상 응답
+    {
+        'Result':0,
+        'Data':[{
+            'MsgCode':0x3000,
+            'Message':'Update Succeed'
+        }]
+    }
