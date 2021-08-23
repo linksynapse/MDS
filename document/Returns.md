@@ -13,12 +13,17 @@
 
 |MsgCode(Upper) 1byte|MsgCode(Lower) 1byte|
 |--------------------|--------------------|
-|ex) 0x00010002|
+|ex) 0x1002|
 
 |MsgCode(Upper)|Description|
 |-------|-----------|
 |0x10|Account|
 |0x20|History|
+## Account Message Parameter
+|MsgCode (1Byte)|Applied Query (1Byte)|Description|
+|-------|--------|--------|
+|0x10|00|정상 반환|
+|0x10|FF|서버 에러|
 
 ## History Message Parameter
 |MsgCode (1Byte)|Applied Query (1Byte)|Description|
