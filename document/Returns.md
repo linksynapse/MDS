@@ -11,11 +11,17 @@
 
 # API 서버 Message Code 값 정의
 
-|MsgCode(Upper) 2byte|MsgCode(Lower) 2byte|
+|MsgCode(Upper) 1byte|MsgCode(Lower) 1byte|
 |--------------------|--------------------|
-|2 Byte|2 Byte|
 |ex) 0x00010002|
 
-|MsgCode|Description|
+|MsgCode(Upper)|Description|
 |-------|-----------|
-|0x0001|Reserved|
+|0x10|Account|
+|0x20|History|
+
+## History Message Parameter
+|MsgCode (1Byte)|Applied Query (1Byte)|Description|
+|-------|--------|--------|
+|0x20|01|1개 쿼리 적용|
+|0x20|FF|255개 쿼리 적용|

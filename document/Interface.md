@@ -80,6 +80,7 @@ Params :
     {
         'Result':-1,
         'Data':[{
+            'MsgCode':0x10FF,
             'Message':'No Record'
         }]
     }
@@ -88,7 +89,33 @@ Params :
     {
         'Result':-2,
         'Data':[{
-            'MsgCode':0x1004,
+            'MsgCode':0x10FE,
             'Message':'Internel Server Error'
+        }]
+    }
+
+## 단말기 히스토리 정보 전송
+Address:
+
+    POST /57C5A9EEA786CD47EE17D720420493FA
+
+Params :
+
+    {
+        'Serial':'BB21A001',
+        'ProjectSiteCode':'PJT_001',
+        'Data':[{
+            'CardId':'01234567',
+            'DeviceType':'IN'
+        }]
+    }
+
+### 응답
+    #### 쿼리 정상 입력 시
+    {
+        'Result':0,
+        'Data':[{
+            'MsgCode':0x2001,
+            'Message':'Upload Succeed'
         }]
     }
