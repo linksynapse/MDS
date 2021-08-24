@@ -11,7 +11,7 @@ Params :
 
     {
         'DeviceId':'[CPUID]',
-        'version':'1.210810.01'
+        'Version':'1.210810.01'
     }
 
 ### 응답

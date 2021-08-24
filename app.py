@@ -19,7 +19,21 @@ app.register_error_handler(500, views.internal_server_error)
 	provide_automatic_options (Optional[bool]) – Add the OPTIONS method and respond to OPTIONS requests automatically.
 	options (Any) – Extra options passed to the Rule object. (Rule object refer : https://werkzeug.palletsprojects.com/en/2.0.x/routing/#werkzeug.routing.Rule)
 """
-app.add_url_rule('/', methods=['POST',], view_func=views.view_hello_information)
+
+# Get Device information
+app.add_url_rule('/2E1E9B5D6B3E378F81FB2706BDE8AE3D', methods=['POST',], view_func=views.get_device_information)
+
+# Get Device initialze information
+app.add_url_rule('/4CF2C6704161CB5C3DCB0FFE9A52B4EC', methods=['POST',], view_func=views.get_initalize_information)
+
+# Get Device Account information
+app.add_url_rule('/C8CDC5F3D46143B664D72D039B5832FC', methods=['POST',], view_func=views.get_device_information)
+
+# Insert Device History information
+app.add_url_rule('/57C5A9EEA786CD47EE17D720420493FA', methods=['POST',], view_func=views.get_device_information)
+
+# Get Device KeepAlive Status
+app.add_url_rule('/82D5984C2A2AD4C62CAF1DD073B1C91C', methods=['POST',], view_func=views.get_device_information)
 
 
 """

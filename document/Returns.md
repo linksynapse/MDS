@@ -19,6 +19,7 @@
 |-------|-----------|
 |0x10|Account|
 |0x20|History|
+|0x30|Global|
 ## Account Message Parameter
 |MsgCode (1Byte)|Applied Query (1Byte)|Description|
 |-------|--------|--------|
@@ -30,3 +31,8 @@
 |-------|--------|--------|
 |0x20|01|1개 쿼리 적용|
 |0x20|FF|255개 쿼리 적용|
+
+## Gloal Message Parameter
+|MsgCode (1Byte)|Applied Query (1Byte)|Description|
+|-------|--------|--------|
+|0x30|FF|unknown|
