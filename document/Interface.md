@@ -1,7 +1,7 @@
 # API 서버 인터페이스 목록
 
 
-## 단말기 정보 요청
+## 단말기 정보 요청 (사용안함)
 Address :
     
     POST /2E1E9B5D6B3E378F81FB2706BDE8AE3D
@@ -36,7 +36,7 @@ Params :
 ### 요청
 
     {
-        'Serial':'BB21A001'
+        'cpu_id':'F0000002CPUID'
     }
 
 ### 응답
@@ -44,10 +44,13 @@ Params :
     {
         'Result':0,
         'Data':[{
-            'ProjectSiteName':'WBS A',
-            'ProjectSiteCode':'PJT_001',
-            'DeviceType':'IN',
-            'Serial':'BB21A001'
+            'cpu_id':'F0000002CPUID',
+            'gant_id':'PJT_001',
+            'gant_name':'BTS-200DR',
+            'proj_id':'01',
+            'proj_name':'WBS A',
+            'status':'IN',
+            'serial':'BB21A001'
         }]
         
     }
@@ -105,8 +108,10 @@ Params :
         'Serial':'BB21A001',
         'ProjectSiteCode':'PJT_001',
         'Data':[{
+            'UserId':'01',
             'CardId':'01234567',
-            'DeviceType':'IN'
+            'DeviceType':'IN',
+            'Created_On':'2021-08-12T:14:35:58.641Z'
         }]
     }
 
