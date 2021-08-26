@@ -15,7 +15,13 @@ def get_initalize_information():
 	if 'cpu_id' not in data:
 		raise ValueError("No DeviceId for target")
 
-	return pkm.GetRowsData(0, mg.find_gentry_information(data['cpu_id']))
+	if 'ipaddress' not in data:
+		raise ValueError("No DeviceId for target")
+
+	if 'macaddress' not in data:
+		raise ValueError("No DeviceId for target")
+
+	return pkm.GetRowsData(0, mg.find_gentry_information(data['cpu_id'],data['ipaddress'],data['macaddress']))
 
 def get_device_account():
 	if not request.is_json:
