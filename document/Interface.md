@@ -65,7 +65,7 @@ Params :
 ### 요청
 
     {
-        'Serial':'BB21A001'
+        'serial':'BB21A001'
     }
 
 ### 응답
@@ -73,9 +73,12 @@ Params :
     {
         'Result':0,
         'Data':[{
-            'CardNumber':'12345678',
-            'UserId':'00001',
-            'Name':'Eden'
+            'user_id':'01',
+            'user_name':'USER_000',
+            'card_id':'01',
+            'card_name':'01234567',
+            'com_id':'01',
+            'com_name':'BLUZEN',
         }]
     }
 
@@ -87,15 +90,6 @@ Params :
             'Message':'No Record'
         }]
     }
-    
-    #### 서버 오류 시
-    {
-        'Result':-2,
-        'Data':[{
-            'MsgCode':0x10FE,
-            'Message':'Internel Server Error'
-        }]
-    }
 
 ## 단말기 히스토리 정보 전송
 Address:
@@ -105,13 +99,20 @@ Address:
 Params :
 
     {
-        'Serial':'BB21A001',
-        'ProjectSiteCode':'PJT_001',
-        'Data':[{
-            'UserId':'01',
-            'CardId':'01234567',
-            'DeviceType':'IN',
-            'Created_On':'2021-08-12T:14:35:58.641Z'
+        "gant_id":"01",
+        "gant_name":"BTS-200DR",
+        "serial":"BB21A001",
+        "proj_id":"01",
+        "proj_name":"WBS A",
+        "status":"IN",
+        "data":[{
+            "user_id":"01",
+            "user_name":"USR_000",
+            "card_id":"08",
+            "card_name":"01234567",
+            "com_id":"01",
+            "com_name":"BLUZEN",
+            "created_on":"2021-08-12T:14:35:58.641Z"
         }]
     }
 
