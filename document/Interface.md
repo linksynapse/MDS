@@ -65,7 +65,8 @@ Params :
 ### 요청
 
     {
-        'serial':'BB21A001'
+        'serial':'BB21A001',
+        'proj_id':'3f7ae379-dfc0-44a9-8fc5-3231430f549d'
     }
 
 ### 응답
@@ -126,7 +127,7 @@ Params :
         }]
     }
 
-## 단말기 생존 여부 파악
+## 단말기 생존 여부 파악 (사용안함)
 Address:
 
     POST /82D5984C2A2AD4C62CAF1DD073B1C91C

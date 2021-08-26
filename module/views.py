@@ -17,6 +17,16 @@ def get_initalize_information():
 
 	return pkm.GetRowsData(0, mg.find_gentry_information(data['cpu_id']))
 
+def get_device_account():
+	if not request.is_json:
+		raise ValueError("invalid parameter")
+
+	data = json.loads(request.data)
+	if 'proj_id' not in data:
+		raise ValueError("No Project id for target")
+
+	return pkm.GetRowsData(0, mg.find_users_information(data['proj_id']))
+
 def set_inout_history():
 	if not request.is_json:
 		raise ValueError("invalid parameter")
