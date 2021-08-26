@@ -30,7 +30,7 @@ app.add_url_rule('/C8CDC5F3D46143B664D72D039B5832FC', methods=['POST',], view_fu
 app.add_url_rule('/57C5A9EEA786CD47EE17D720420493FA', methods=['POST',], view_func=views.get_device_account)
 
 # Get Device KeepAlive Status
-app.add_url_rule('/82D5984C2A2AD4C62CAF1DD073B1C91C', methods=['POST',], view_func=views.get_initalize_information)
+#app.add_url_rule('/82D5984C2A2AD4C62CAF1DD073B1C91C', methods=['POST',], view_func=views.get_initalize_information)
 
 
 """
