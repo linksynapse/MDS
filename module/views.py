@@ -2,6 +2,7 @@ from flask import render_template, redirect, request, jsonify
 from module import packmsg as pkm
 from module import pymongo as mg
 from uuid import uuid4
+import datetime
 import json
 
 def get_initalize_information():
@@ -13,15 +14,24 @@ def get_initalize_information():
 	data = json.loads(request.data)
 
 	if 'cpu_id' not in data:
-		raise ValueError("No DeviceId for target")
+		raise ValueError("No cpu_id for target")
 
-	if 'ipaddress' not in data:
-		raise ValueError("No DeviceId for target")
+	if 'pubaddr' not in data:
+		raise ValueError("No pubaddress for target")
 
-	if 'macaddress' not in data:
-		raise ValueError("No DeviceId for target")
+	if 'nataddr' not in data:
+		raise ValueError("No nataddress for target")
 
-	return pkm.GetRowsData(0, mg.find_gentry_information(data['cpu_id'],data['ipaddress'],data['macaddress']))
+	if 'macaddr' not in data:
+		raise ValueError("No macaddress for target")
+
+	records = mg.find_gentry_information(data['cpu_id'],data['nataddr'],data['pubaddr'],data['macaddr'])
+	if(len(records) > 0):
+		return pkm.GetRowsData(0, mg.find_gentry_information(data['cpu_id'],data['nataddr'],data['pubaddr'],data['macaddr']))
+	else:
+		return pkm.GetRowsMsg(-1, 0x0100, 'No records')
+
+	
 
 def get_device_account():
 	if not request.is_json:
@@ -57,7 +67,10 @@ def set_inout_history():
 		x['proj_name'] = data['proj_name']
 		x['desc'] = ""
 		x['status'] = data['status']
+		x['created_on'] = datetime.datetime.strptime(x['created_on'], "%Y-%m-%dT%H:%M:%S.%fZ")
 		histories.append(x)
+
+	print(histories)
 
 	data = [{
 		"MsgCode":(0x2000 + len(mg.insert_history_information(histories))),

@@ -2,10 +2,10 @@ from module import mongo
 from pymongo.cursor import CursorType
 import datetime
 
-def find_gentry_information(cpu_id, ipaddr, mac):
+def find_gentry_information(cpu_id, nataddr, pubaddr, mac):
     result = []
-    data = mongo["acs"]["gantries"].find({"cpu_id":cpu_id}, {"_id":False,'last_ipaddr':False,'last_login':False,'last_mac':False})
-    mongo["acs"]["gantries"].update_one({"cpu_id":cpu_id}, {"$set":{"last_login":datetime.datetime.now(), "last_ipaddr":ipaddr, "last_mac":mac}})
+    data = mongo["acs"]["gantries"].find({"cpu_id":cpu_id}, {"_id":False,'last_pubaddr':False,'last_login':False,'last_mac':False})
+    mongo["acs"]["gantries"].update_one({"cpu_id":cpu_id}, {"$set":{"last_login":datetime.datetime.now(), "last_pubaddr":pubaddr, "last_nataddr":nataddr, "last_mac":mac}})
 
     for x in data:
         result.append(x)
