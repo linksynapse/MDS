@@ -1,4 +1,5 @@
 from module import mongo
+from module import mongo_r
 from pymongo.cursor import CursorType
 import datetime
 
@@ -41,4 +42,8 @@ def find_users_information(proj_id):
 
 def insert_history_information(values):
     result = mongo["acs"]["inout_records"].insert_many(values).inserted_ids
+    return result
+
+    def insert_history_to_replica_information(values):
+    result = mongo_r["acs_replica"]["inout_records"].insert_many(values).inserted_ids
     return result

@@ -70,7 +70,10 @@ def set_inout_history():
 		x['created_on'] = datetime.datetime.strptime(x['created_on'], "%Y-%m-%dT%H:%M:%S.%fZ")
 		histories.append(x)
 
-	print(histories)
+	try:
+		mg.insert_history_to_replica_information(histories)
+	except Exception as ex:
+		raise ValueError("Fail insert data to replica server")
 
 	data = [{
 		"MsgCode":(0x2000 + len(mg.insert_history_information(histories))),
